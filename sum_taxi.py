@@ -4,6 +4,7 @@ from datetime import datetime
 df = pd.read_csv('simple_nyc_green.csv')
 
 count_pickup = {}
+year_2013 = datetime.strptime('01-01-13', '%m-%d-%y').date().year
 
 for index, row in df.iterrows():
     dt = datetime.strptime(row['pickup_datetime'], '%m-%d-%y %H:%M:%S').date()
@@ -16,7 +17,7 @@ for index, row in df.iterrows():
     else:
         count_pickup[date] = c
 
-print(count_pickup)
+# print(count_pickup)
 
 data_lst = []
 value_lst = []
