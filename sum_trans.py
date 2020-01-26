@@ -9,7 +9,7 @@ year_2013 = datetime.strptime('01-01-13', '%m-%d-%y').date().year
 
 for index, row in df1.iterrows():
     dt = datetime.strptime(row['Date'], '%m-%d-%y').date()
-    date = dt.strftime("%m-%d-%y")
+    date = dt.strftime("%Y-%m-%d")
     c = row['Volumn']
     if date in count_pickup:
         count_pickup[date] += c
@@ -20,7 +20,7 @@ for index, row in df2.iterrows():
     dt = datetime.strptime(row['Date'], '%m-%d-%y').date()
     if dt.year != year_2013:
         continue
-    date = dt.strftime("%m-%d-%y")
+    date = dt.strftime("%Y-%m-%d")
     c = row['Volumn']
     if date in count_pickup:
         count_pickup[date] += c
